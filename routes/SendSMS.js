@@ -13,6 +13,8 @@ router.post("/SMS", async (req, res) => {
         message: "Hello world",
         destinationAddresses: ["tel:94711923774"],
     });
+
+    res.status(200).json(response);
     // axios
     //   .post("https://api.mspace.lk/sms/send", {
     //     version: "1.0",
