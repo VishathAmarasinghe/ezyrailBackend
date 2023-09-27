@@ -10,7 +10,7 @@ router.post("/SMS", async (req, res) => {
       .post("https://api.mspace.lk/sms/send", {
         version: "1.0",
         applicationId: "APP_008044",
-        password: "password",
+        password: "SPP_002309",
         message: "Hello world",
         destinationAddresses: ["tel:94711923774"],
       })
