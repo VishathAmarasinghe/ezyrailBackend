@@ -10,7 +10,7 @@ router.post("/SMS", async (req, res) => {
     const response=await axios.post("https://api.mspace.lk/sms/send",{
         version: "1.0",
         applicationId: "APP_008048",
-        password: "ezyrail_1234",
+        password: "892157f1e36be1cc1f7e75dd474db03c",
         message: "Hello world",
         destinationAddresses: ["tel:94711923774"],
     });
