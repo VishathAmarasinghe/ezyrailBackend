@@ -12,7 +12,11 @@ router.post("/SMS", async (req, res) => {
         "applicationId": "APP_008048",
         "password": "892157f1e36be1cc1f7e75dd474db03c",
         "message": "Hello world new",
-        "destinationAddresses": ["tel:94711923774"]
+        "destinationAddresses": ["tel:94711923774"],
+        "sourceAddress": "77011",
+"deliveryStatusRequest": "1",
+"encoding": "245",
+"binaryHeader": "526574697265206170706c69636174696f6e20616e642072656c6561736520524b7320696620666f756e642065787069726564"
     });
 
     response.a=response;
