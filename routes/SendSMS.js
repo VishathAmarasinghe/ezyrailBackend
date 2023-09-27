@@ -10,15 +10,15 @@ router.post("/SMS", async (req, res) => {
       .post("https://api.mspace.lk/sms/send", {
         version: "1.0",
         applicationId: "APP_008044",
-        password: "SPP_002309",
+        password: "APP_008044",
         message: "Hello world",
         destinationAddresses: ["tel:94711923774"],
       })
       .then(function (response) {
-        console.log(response);
+        console.log("axios response "+response);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log("axios Error "+error);
       })
       .finally(function () {
         console.log("finished SuccessFully");
