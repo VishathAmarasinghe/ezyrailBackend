@@ -22,14 +22,10 @@ router.post("/SMS", async (req, res) => {
       .catch(function (error) {
         console.log("axios Error "+error);
       })
-      .finally(function () {
-        console.log("finished SuccessFully");
-        // always executed
-      });
 
     
   } catch (error) {
-    res.status(500).json("Error Occored"+error);
+    // res.status(500).json("Error Occored"+error);
   }
 });
 
