@@ -5,7 +5,7 @@ const axios = require("axios");
 
 router.post("/SMS", async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     axios
       .post("https://api.mspace.lk/sms/send", {
         version: "1.0",
@@ -16,6 +16,7 @@ router.post("/SMS", async (req, res) => {
       })
       .then(function (response) {
         console.log("axios response "+response);
+        res.status(200).json(response);
       })
       .catch(function (error) {
         console.log("axios Error "+error);
@@ -25,7 +26,7 @@ router.post("/SMS", async (req, res) => {
         // always executed
       });
 
-    res.status(200).json(user);
+    
   } catch (error) {
     res.status(500).json("Error Occored"+error);
   }
