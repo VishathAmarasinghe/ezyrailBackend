@@ -18,7 +18,7 @@ router.post("/SMS", async (req, res) => {
 
 
 
-    
+
     // response.a=response;
     // stringify(response);
     res.status(200).send(response);
@@ -45,5 +45,32 @@ router.post("/SMS", async (req, res) => {
     res.status(500).json("Error Occored "+error);
   }
 });
+
+
+
+router.post("/OTP", async (req, res) => {
+    try {
+      const response=await axios.post("https://api.mspace.lk/otp/request",{
+        "applicationId": "APP_008048",
+        "password": "892157f1e36be1cc1f7e75dd474db03c",
+        "subscriberId": "tel:94711923774"
+      });
+  
+  
+  
+  
+  
+      
+      // response.a=response;
+      // stringify(response);
+      console.log(response);
+    //   res.status(200).send(response);
+
+  
+      
+    } catch (error) {
+      res.status(500).json("Error Occored "+error);
+    }
+  });
 
 module.exports = router;
