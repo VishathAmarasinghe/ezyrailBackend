@@ -68,8 +68,9 @@ router.post("/login",async(req,res)=>{
                 const { password, ...others } = user._doc;
                 // res.status(200).json(others);
                 const token = jwt.sign({ username }, SECRET_KEY);
-                console.log("token"+token);
-                res.json({ token });
+                const userID=user._id;
+                console.log("token"+token+"  id"+userID);
+                res.json({ token,userID });
             }
         }else{
             !user && res.status(400).json("wrong credentials");
