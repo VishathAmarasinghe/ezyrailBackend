@@ -8,11 +8,11 @@ router.post("/SMS", async (req, res) => {
   try {
     // console.log("request body "+req.body);
     const response=await axios.post("https://api.mspace.lk/sms/send",{
-        version: "1.0",
-        applicationId: "APP_008048",
-        password: "892157f1e36be1cc1f7e75dd474db03c",
-        message: "Hello world",
-        destinationAddresses: ["94711923774"]
+        "version": "1.0",
+        "applicationId": "APP_008048",
+        "password": "892157f1e36be1cc1f7e75dd474db03c",
+        "message": "Hello world",
+        "destinationAddresses": ["tel:94711923774"]
     });
 
     response.a=response;
