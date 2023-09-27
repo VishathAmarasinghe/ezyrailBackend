@@ -16,7 +16,7 @@ router.post("/SMS", async (req, res) => {
       })
       .then(function (response) {
         // console.log("axios response "+response);
-        res.status(200).send(response);
+        res.status(200).json(response);
         // res.send(response);
       })
       .catch(function (error) {
