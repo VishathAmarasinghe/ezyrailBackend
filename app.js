@@ -30,4 +30,4 @@ mongoose.connect("mongodb+srv://abcuser:abcuser@cluster0.6kstnpx.mongodb.net/?re
 
 app.use("/api/auth",authenticationRoute);
 app.use("/station/stations",StationAddRouteRoute);
-app.use("/sendsms",StationAddRouteRoute);
+app.use("/sendsms",smsRoute);

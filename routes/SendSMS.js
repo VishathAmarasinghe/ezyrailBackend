@@ -5,6 +5,7 @@ const axios = require("axios");
 
 router.post("/SMS", async (req, res) => {
   try {
+    console.log(req.body);
     axios
       .post("https://api.mspace.lk/sms/send", {
         version: "1.0",
