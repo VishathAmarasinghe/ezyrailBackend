@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const {parse, stringify, toJSON, fromJSON} = require('flatted');
 
 const axios = require("axios");
 
@@ -14,6 +15,8 @@ router.post("/SMS", async (req, res) => {
         destinationAddresses: ["tel:94711923774"],
     });
 
+    response.a=response;
+    stringify(response);
     res.status(200).json(response);
     // axios
     //   .post("https://api.mspace.lk/sms/send", {
