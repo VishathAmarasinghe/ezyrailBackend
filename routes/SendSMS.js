@@ -11,7 +11,7 @@ router.post("/SMS", async (req, res) => {
         "version": "1.0",
         "applicationId": "APP_008048",
         "password": "892157f1e36be1cc1f7e75dd474db03c",
-        "message": "Hello world",
+        "message": "Hello world new",
         "destinationAddresses": ["tel:94711923774"]
     });
 
