@@ -17,7 +17,8 @@ router.post("/SMS", async (req, res) => {
 
     response.a=response;
     stringify(response);
-    res.status(200).json(response);
+    res.status(200).send(response);
+    console.log(response);
     // axios
     //   .post("https://api.mspace.lk/sms/send", {
     //     version: "1.0",
