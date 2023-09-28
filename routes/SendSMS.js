@@ -47,7 +47,7 @@ router.post("/OTP", async (req, res) => {
     const response = await axios.post("https://api.mspace.lk/otp/request", {
       applicationId: "APP_008048",
       password: "892157f1e36be1cc1f7e75dd474db03c",
-      subscriberId: "tel:94711923774",
+      subscriberId: "tel:"+phoneNo,
       applicationMetaData: {
         client: "MOBILEAPP",
         device: "Redmi 9T",
