@@ -1,23 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const {parse, stringify, toJSON, fromJSON} = require('flatted');
+const { parse, stringify, toJSON, fromJSON } = require("flatted");
 
 const axios = require("axios");
 
 router.post("/SMS", async (req, res) => {
   try {
-    const response=await axios.post("https://api.mspace.lk/sms/send",{
-        "version": "1.0",
-        "applicationId": "APP_008048",
-        "password": "892157f1e36be1cc1f7e75dd474db03c",
-        "message": "Hello world",
-        "destinationAddresses": ["tel:94711923774"]
+    const response = await axios.post("https://api.mspace.lk/sms/send", {
+      version: "1.0",
+      applicationId: "APP_008048",
+      password: "892157f1e36be1cc1f7e75dd474db03c",
+      message: "Hello world",
+      destinationAddresses: ["tel:94711923774"],
     });
-
-
-
-
-
 
     // response.a=response;
     // stringify(response);
@@ -39,43 +34,50 @@ router.post("/SMS", async (req, res) => {
     //   .catch(function (error) {
     //     console.log("axios Error "+error);
     //   })
-
-    
   } catch (error) {
-    res.status(500).json("Error Occored "+error);
+    res.status(500).json("Error Occored " + error);
   }
 });
 
-
-
 router.post("/OTP", async (req, res) => {
-    try {
-      const response=await axios.post("https://api.mspace.lk/otp/request",{
-        "applicationId": "APP_008048",
-        "password": "892157f1e36be1cc1f7e75dd474db03c",
-        "subscriberId": "tel:94711923774",
-        "applicationMetaData": {
-            "client": "MOBILEAPP",
-            "device": "Redmi 9T",
-            "os": "android 12",
-            "appCode": "https://play.google.com/store/apps/details?id=lk"
-            }
-      });
-  
-  
-  
-  
-      
-      // response.a=response;
-      // stringify(response);
-      console.log(response);
-    //   res.status(200).send(response);
+  try {
+    const response = await axios.post("https://api.mspace.lk/otp/request", {
+      applicationId: "APP_008048",
+      password: "892157f1e36be1cc1f7e75dd474db03c",
+      subscriberId: "tel:94711923774",
+      applicationMetaData: {
+        client: "MOBILEAPP",
+        device: "Redmi 9T",
+        os: "android 12",
+        appCode: "https://play.google.com/store/apps/details?id=lk",
+      },
+    });
 
-  
-      
-    } catch (error) {
-      res.status(500).json("Error Occored "+error);
-    }
-  });
+    // response.a=response;
+    // stringify(response);
+    console.log(response);
+    //   res.status(200).send(response);
+  } catch (error) {
+    res.status(500).json("Error Occored " + error);
+  }
+});
+
+router.post("/OTPres", async (req, res) => {
+  try {
+    const response = await axios.post("https://api.mspace.lk/otp/verify", {
+      applicationId: "APP_008048",
+      password: "892157f1e36be1cc1f7e75dd474db03c",
+      referenceNo: "94711923774169586031523910290",
+      otp: "881500",
+    });
+
+    // response.a=response;
+    // stringify(response);
+    console.log(response);
+    //   res.status(200).send(response);
+  } catch (error) {
+    res.status(500).json("Error Occored " + error);
+  }
+});
 
 module.exports = router;
