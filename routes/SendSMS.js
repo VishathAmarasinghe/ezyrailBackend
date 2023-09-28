@@ -43,6 +43,7 @@ router.post("/OTP", async (req, res) => {
     
   try {
     const phoneNo=req.body.phoneNo;
+    console.log(phoneNo);
     const response = await axios.post("https://api.mspace.lk/otp/request", {
       applicationId: "APP_008048",
       password: "892157f1e36be1cc1f7e75dd474db03c",
@@ -66,6 +67,8 @@ router.post("/OTPres", async (req, res) => {
   try {
     const refNo=req.body.referenceNo;
     const otpNo=req.body.OTP;
+    console.log("ref no "+refNo);
+    console.log("otpNo "+otpNo);
     const response = await axios.post("https://api.mspace.lk/otp/verify", {
       applicationId: "APP_008048",
       password: "892157f1e36be1cc1f7e75dd474db03c",
