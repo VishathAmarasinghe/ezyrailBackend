@@ -4,6 +4,7 @@ const router = express.Router();
 const QRs=require("../Modules/Qrstore");
 
 
+
 router.post("/store",async(req,res)=>{
     try {
 
@@ -22,6 +23,22 @@ router.post("/store",async(req,res)=>{
     } catch (error) {
        console.log("QR Adding Error "+error);
        res.status(500).json(error);
+    }
+})
+
+
+router.get("/find", async(req,res)=>{
+    const username=req.body.QRUserID;
+    try {
+        let posts;
+        if (username) {
+            posts=await QRs.find({username})
+        }else{
+            posts= {};
+        }
+        res.status(200).json(posts);
+    } catch (error) {
+        res.status(500).json(error);
     }
 })
 
