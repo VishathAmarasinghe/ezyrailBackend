@@ -29,6 +29,7 @@ router.post("/store",async(req,res)=>{
 
 router.get("/find", async(req,res)=>{
     const username=req.body.QRUserID;
+    console.log("userName "+username);
     try {
         let posts;
         if (username) {
