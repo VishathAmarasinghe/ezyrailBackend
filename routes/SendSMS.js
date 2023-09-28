@@ -52,7 +52,7 @@ router.post("/OTP", async (req, res) => {
         client: "MOBILEAPP",
         device: "Redmi 9T",
         os: "android 12",
-        appCode: "https://play.google.com/store/apps/details?id=lk",
+        appCode: `https://play.google.com/store/apps/details?${phoneNo}=lk`,
       },
     });
 
