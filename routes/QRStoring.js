@@ -33,7 +33,7 @@ router.get("/find", async(req,res)=>{
     try {
         let posts;
         if (username) {
-            posts=await QRs.find({username})
+            posts=await QRs.find({QRUserID:username})
         }else{
             posts= {};
         }
