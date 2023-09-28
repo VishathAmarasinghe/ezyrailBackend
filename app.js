@@ -5,6 +5,7 @@ var cors = require('cors')
 const authenticationRoute=require('./routes/auth');
 const StationAddRouteRoute=require('./routes/StationUpdate');
 const smsRoute=require('./routes/SendSMS');
+const QRRoute=require("./routes/QRStoring");
 
 
 app.use(cors());
@@ -31,3 +32,4 @@ mongoose.connect("mongodb+srv://abcuser:abcuser@cluster0.6kstnpx.mongodb.net/?re
 app.use("/api/auth",authenticationRoute);
 app.use("/station/stations",StationAddRouteRoute);
 app.use("/sendsms",smsRoute);
+app.use("/QR",QRRoute);
