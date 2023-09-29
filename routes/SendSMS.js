@@ -5,12 +5,16 @@ const { parse, stringify, toJSON, fromJSON } = require("flatted");
 const axios = require("axios");
 
 router.post("/SMS", async (req, res) => {
+    const url="https://www.google.com/";
   try {
     const response = await axios.post("https://api.mspace.lk/sms/send", {
       version: "1.0",
       applicationId: "APP_008048",
       password: "892157f1e36be1cc1f7e75dd474db03c",
-      message: "Hello world",
+      message:`You Sucessfully booked the Train Ticket.
+      You can use this link to get Your QR code.
+      ${url}
+      `,
       destinationAddresses: ["tel:94711923774"],
     });
 
