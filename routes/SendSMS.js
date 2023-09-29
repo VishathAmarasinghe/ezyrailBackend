@@ -76,15 +76,17 @@ router.post("/OTPres", async (req, res) => {
 
 router.post("/cashtrans", async (req, res) => {
   try {
+    const telNo = req.body.PhoneNo;
+    const deductAmount = req.body.DeductAmount;
     const response = await axios.post(
       "https://api.mspace.lk/caas/direct/debit",
       {
         applicationId: "APP_008048",
         password: "892157f1e36be1cc1f7e75dd474db03c",
         externalTrxId: "12345678901234567890123456789012",
-        subscriberId: "tel:94711923774",
+        subscriberId: "tel:"+telNo,
         paymentInstrumentName: "Mobile Account",
-        amount: "20",
+        amount: deductAmount,
         currency: "LKR",
       }
     );
