@@ -81,14 +81,35 @@ router.post("/cashtrans", async (req, res) => {
         currency: "LKR",
       }
     );
-
-    // response.a=response;
-    // stringify(response);
     console.log(response.data);
     res.status(200).json(response.data);
   } catch (error) {
     res.status(500).json("Error Occored " + error);
   }
 });
+
+
+
+router.post("/subscription", async (req, res) => {
+    try {
+      const response = await axios.post(
+        "https://api.mspace.lk/subscription/send",
+        {
+          applicationId: "APP_008048",
+          password: "892157f1e36be1cc1f7e75dd474db03c",
+          subscriberId: "tel:94711923774",
+          action:"1"
+        }
+      );
+      console.log(response.data);
+      res.status(200).json(response.data);
+    } catch (error) {
+      res.status(500).json("Error Occored " + error);
+    }
+  });
+
+
+
+
 
 module.exports = router;
