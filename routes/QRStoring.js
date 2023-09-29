@@ -37,6 +37,7 @@ router.get("/find", async(req,res)=>{
         }else{
             posts= {};
         }
+        console.log("post data "+posts);
         res.status(200).json(posts);
     } catch (error) {
         res.status(500).json(error);
