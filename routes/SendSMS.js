@@ -77,7 +77,7 @@ router.post("/cashtrans", async (req, res) => {
         externalTrxId: "12345678901234567890123456789012",
         subscriberId: "tel:94711923774",
         paymentInstrumentName: "Mobile Account",
-        amount: "2",
+        amount: "20",
         currency: "LKR",
       }
     );
