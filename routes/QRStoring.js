@@ -27,7 +27,7 @@ router.post("/store",async(req,res)=>{
 })
 
 
-router.get("/find", async(req,res)=>{
+router.get("/find/:QRUserID", async(req,res)=>{
     const username=req.params.QRUserID;
     console.log("userName "+username);
     try {
