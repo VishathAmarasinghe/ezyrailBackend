@@ -70,8 +70,9 @@ router.post("/login",async(req,res)=>{
                 // res.status(200).json(others);
                 const token = jwt.sign({ username }, SECRET_KEY);
                 const userID=user._id;
-                console.log("token"+token+"  id"+userID);
-                res.json({ token,userID });
+                const userphone=user.PhoneNo;
+                console.log("token"+token+"  id"+userID+"   phoneno"+userphone);
+                res.json({ token,userID,userphone });
             }
         }else{
             !user && res.status(400).json("wrong credentials");
