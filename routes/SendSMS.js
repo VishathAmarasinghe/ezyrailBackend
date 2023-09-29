@@ -16,7 +16,8 @@ router.post("/SMS", async (req, res) => {
 
     // response.a=response;
     // stringify(response);
-    res.status(200).send(response);
+    console.log(response.data);
+    res.status(200).json(response.data);
   } catch (error) {
     res.status(500).json("Error Occored " + error);
   }
