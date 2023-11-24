@@ -6,6 +6,7 @@ const authenticationRoute=require('./routes/auth');
 const StationAddRouteRoute=require('./routes/StationUpdate');
 const smsRoute=require('./routes/SendSMS');
 const QRRoute=require("./routes/QRStoring");
+const chatroute=require("./routes/chat");
 
 
 app.use(cors());
@@ -33,3 +34,4 @@ app.use("/api/auth",authenticationRoute);
 app.use("/station/stations",StationAddRouteRoute);
 app.use("/sendsms",smsRoute);
 app.use("/QR",QRRoute);
+app.use("/chatbot",chatroute);
