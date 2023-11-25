@@ -83,7 +83,7 @@ router.post("/cashtrans", async (req, res) => {
       {
         applicationId: "APP_008048",
         password: "892157f1e36be1cc1f7e75dd474db03c",
-        externalTrxId: "12345678901234567890123456789012",
+        externalTrxId: "1234567890123456789012345678901223",
         subscriberId: "tel:94711923774",
         paymentInstrumentName: "Mobile Account",
         amount: deductAmount,
