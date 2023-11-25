@@ -35,9 +35,9 @@ const chatWithGPT3 = async (userInput) => {
         frequency_penalty: 0,
         presence_penalty: 0,
       });
-      console.log(response.choices[0].message.content);
+      console.log(response.choices[0].message);
       //   response.data.choices[0].text.trim()
-      return response.choices[0].message.content;
+      return String(response.choices[0].message.content);
     } catch (error) {
       console.error("Error communicating with the API:", error.message);
       return "";
@@ -48,9 +48,12 @@ const chatWithGPT3 = async (userInput) => {
 
 
 
-router.get("/chatresponse", async(req,res)=>{
+router.post("/chatresponse", async(req,res)=>{
     try {
+        console.log("request  ",req.body.message);
         const response=await chatWithGPT3(req.body.message);
+        console.log(response);
+        
         res.send(response);
     } catch (error) {
         console.log("chat Error "+error);
