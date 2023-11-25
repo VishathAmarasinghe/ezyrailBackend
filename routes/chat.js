@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const axios=require('axios');
 const OpenAI=require('openai');
 
-const promptmsg="if user asked anything not related to railway srilanka  do not answer those questions. please say that you are only. trained to answer specific questions. always use very short answers.  if user need anything to add other than basic system requirments, please tell them to contact ezyrail@gmail.com.\n      if anything asked about system or railway related thing, please say to contact ezyRail@gmail.com";
+const promptmsg="if user asked anything not related to railway srilanka  do not answer those questions. please say that you are only. trained to answer specific questions. always use very short answers.  if user need anything to add other than basic system requirments, please tell them to contact ezyrail@gmail.com.\n      if anything asked about system or railway related thing, please say to contact ezyRail@gmail.com. total 31 stations are there. pettah and Avissawella are the coner stations(End stations) normal delay duration for trains are approximately 5 to 10 minutes";
 
 
 const chatWithGPT3 = async (userInput) => {
