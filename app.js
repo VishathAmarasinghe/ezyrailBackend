@@ -30,7 +30,7 @@ mongoose.connect("mongodb+srv://abcuser:abcuser@cluster0.6kstnpx.mongodb.net/?re
     .then(console.log("connected to the database")).catch((err)=>console.log(err));
 
 
-app.use("/api/auth",authenticationRoute);
+// app.use("/api/auth",authenticationRoute);
 app.use("/station/stations",StationAddRouteRoute);
 app.use("/sendsms",smsRoute);
 app.use("/QR",QRRoute);

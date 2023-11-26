@@ -8,7 +8,7 @@ const promptmsg="if user asked anything not related to railway srilanka  do not 
 
 const chatWithGPT3 = async (userInput) => {
     const openai = new OpenAI({
-      apiKey: "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",
+    //   apiKey: "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",
       dangerouslyAllowBrowser: true,
     });
 
